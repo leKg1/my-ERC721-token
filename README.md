@@ -1,6 +1,6 @@
 # my-ERC721-token
 
-my-ERC721-token is about how create a non-fungible token (NFT) and deploy to a public testnet(Ropsten).
+my-ERC721-token is about creating a non-fungible token (NFT) and deploy to a public testnet(Ropsten).
 
 ERC721 is a standard for representing ownership of non-fungible tokens, that is, where each token is unique such as in real estate or collectibles.
 
