@@ -34,21 +34,21 @@ $ npx truffle init
 
 Then we are going to create our smart contract.
 
-Using your favorite editor in ```contracts``` directory create a file ```YourSmartContract.sol``` and paste the following code:
+Using your favorite editor in ```contracts``` directory create a file ```AgkPicToken.sol``` and paste the following code:
 
 ```bash
-// contracts/YourSmartContract.sol
+// contracts/AgkPicToken.sol
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.6.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract YourSmartContract is ERC721 {
+contract AgkPicToken is ERC721 {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
-    constructor() public ERC721("YourSmartContract", "YSC") {}
+    constructor() public ERC721("AgkPicToken", "APT") {}
 
     function mintToken(address recipient, string memory tokenURI)
         public
@@ -105,7 +105,7 @@ truffle(rinkeby)> migrate --reset
 ```
 We can then use our deployed contract.
 ```
-truffle(rinkeby)> nft = await YourSmartContract.deployed()
+truffle(rinkeby)> nft = await AgkPicToken.deployed()
 ```
 We can call the contract to read ```token data``` such as ```name```, ```symbol``` and ```smart contract address```
 ```bash
@@ -113,13 +113,13 @@ truffle(rinkeby)> await nft.name()
 
 truffle(rinkeby)> await nft.symbol()
 
-truffle(rinkeby)> await nft.address()
 ```
 ## Let's Mint
 We can send a transaction to mint tokens to a given account, from an account with the minter role.
 
 ```bash
-truffle(rinkeby)> await nft.mint("your-account-address", "your-item’s-metadata-path")
+truffle(rinkeby)> await nft.mintToken("your-account-address", "your-item’s-metadata-path")
+await nft.mintToken("0x0c9D471976833dC2E910527163DBACf780D30DFF", "ipfs://Qmd5FKMBWeBmNnMqRqHycxew3R1GzNU8ot29juUvJwpBiH")
 ```
 We can check the owner of the token and the token URI for the metadata
 ```bash

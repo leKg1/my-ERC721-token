@@ -1,5 +1,5 @@
-const DiscoveryArtToken = artifacts.require("DiscoveryArtToken");
+const AgkPicToken = artifacts.require("AgkPicToken");
 
 module.exports = function(deployer) {
-  deployer.deploy(DiscoveryArtToken);
+  deployer.deploy(AgkPicToken);
 };
